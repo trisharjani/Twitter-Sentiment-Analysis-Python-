@@ -21,4 +21,5 @@ Heatmap of correlations:
 Average Sentiment of Tweets over Time: 
 ![alt text](https://github.com/trisharjani/python/blob/master/images/sentiment_over_time.jpg "Sentiment over Time")
 
-
+Build Settings
+theme: minima
