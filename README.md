@@ -14,12 +14,14 @@ To do this, I used a publicly available dataset containing Twitter data, availab
 * Seaborn
 
 ## Exploratory Data Analysis
+Tweet Volume Over Time: 
+
+Heatmap of correlations:
 
 ## Sentiment Analysis
 Average Sentiment of Tweets over Time: 
 ![alt text](https://github.com/trisharjani/python/blob/master/images/sentiment_over_time.jpg "Sentiment over Time")
 
 ## Network Analysis
-Heatmap of correlations: 
 ![alt text](https://github.com/trisharjani/python/blob/master/images/network%20mapping.jpg "Network Visualisation")
 
