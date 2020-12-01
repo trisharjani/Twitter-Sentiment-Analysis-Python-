@@ -40,8 +40,6 @@ Average Sentiment of Tweets over Time:
 
 <img src="https://github.com/trisharjani/python/blob/master/images/network%20mapping.jpg" width="600" height="700"/>
 
-![alt text]( "Network Visualisation")
-
 ## Regression Analaysis 
 
 ## Summary of Conclusions 
