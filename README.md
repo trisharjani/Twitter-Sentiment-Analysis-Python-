@@ -4,7 +4,7 @@
 During my MSc, my thesis was focused on the broad goal of understanding why and how people choose to share information in a political context and how this is impacted by sentiment, whether a tweet is news and whether it endorses a campaign that the user supports. The investigative goals were as follows:
 * To understand whether the sentiment of a tweet is correlated with the number of re-tweets and whether this is impacted by
     * A tweet being classified as 'news'  
-    * The political affiliation of the tweet (i.e. whether users are more likely to re-tweet 
+    * The political affiliation of the tweet (i.e. whether users are more likely to re-tweet)
     
 While this page contains a summarised version of my project, feel free to access the full thesis document [here](http://bit.ly/trisha_thesis) or alternatively watch this [video of a workshop I delivered remotely for the British Library](http://bit.ly/britishlib_video) for students looking to conduct research projects using social media data 
 
