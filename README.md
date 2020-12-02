@@ -9,11 +9,18 @@ During my MSc, my thesis was focused on the broad goal of understanding why and 
 While this page contains a summarised version of my project, feel free to access the full thesis document [here](http://bit.ly/trisha_thesis) or alternatively watch this [video of a workshop I delivered remotely for the British Library] (http://bit.ly/britishlib_video) for students looking to conduct research projects using social media data 
 
 ## Project Tools 
-To do this, I used a publicly available dataset containing Twitter data which you may download [here](https://catalog.docnow.io/) titled "Ireland 8th amendment referendum vote". Alternatively, the .txt file is also included in repository. I chose to use Python given its ease to work with and R/ R Studio's speed limitations in processing big data. Writing in Python 3.5, I used Jupyter Notebook and Anaconda employing the following packages during the analysis. Feel free to access the full script [here](https://github.com/trisharjani/twitter_sentment_python/blob/master/Cleaning_Sentiment_News.ipynb). 
+To do this, I used a publicly available dataset containing Twitter data which you may download [here](https://catalog.docnow.io/) titled "Ireland 8th amendment referendum vote". Alternatively, the .txt file is also included in repository. I chose to use Python given its ease to work with and R/ R Studio's speed limitations in processing big data.  Feel free to access the full script [here](https://github.com/trisharjani/twitter_sentment_python/blob/master/Cleaning_Sentiment_News.ipynb). Kindly flagging that this code is quite long and may take a few tries to load.
 
-* Numpy 
-* Pandas 
-* Seaborn
+Writing in Python 3.5, I used Jupyter Notebook and Anaconda. Below are some of the key packages I used for data exploration, manipulation, analysis and visualisation.   
+
+* numpy 
+* pandas 
+* seaborn
+* nltk (natural language toolkit)
+* matplotlib
+* statsmodels
+
+Network analysis was performed using a different program, namely [CytoScape](https://cytoscape.org/). It could have alternatively been done using the NetworkX package in Python however since I was using my laptop, I was computationally limited and thus it was most accessible to use a different application which was also able to provide basic network measures such as degree centrality, betweenness centrality, eigenvector centrality etc. 
 
 ## Data Cleaning & Simple Classification 
 
@@ -42,28 +49,34 @@ In order to assign tweets a sentiment, each tweet was run through a sentiment an
 
 *4. Filtering by Users of Importance* 
 
+In order to identify whether the user posting the data has an impact on the retweet count and/or probability of a tweet being retweeted, each user needed to be characterised as either i) a campaigner from ‘yes’ camp, ii) campaigner from the ‘no’ camp, iii) a recognised news source, iv) a politician/ political party or, v) neither. To do this, a number of supplementary data sources were sought to generate a list to filter the usernames by. A similar filtering approach was adopted by Gross and Johnson (2016). Once this was done, dummy variables for each type of user were created. These were critical to the regression analysis presented later.
 
-
-## Exploratory Data Analysis
+## Data Visualisations 
 Heatmap of correlations:
 
 <img src="https://github.com/trisharjani/twitter_sentment_python/blob/master/images/heatmap_correlations.jpg" width="400" height="300"/>
 
-## Sentiment Analysis
 Average Sentiment of Tweets over Time: 
+
 ![alt text](https://github.com/trisharjani/python/blob/master/images/sentiment_over_time.jpg "Sentiment over Time")
 
-## Network Analysis
+Network Analysis (smaller cluster represents mostly no-endorsement tweets):
+
+[Click here for the zoomed version where node names are visible](https://github.com/trisharjani/twitter_sentment_python/blob/master/images/network%20mapping.jpg)
 
 <img src="https://github.com/trisharjani/python/blob/master/images/network%20mapping.jpg" width="600" height="700"/>
 
-## Regression Analaysis 
+Regression Analaysis (Please refer to the table above as a key for the 1,2,3,4):
 
-
+<img src="https://github.com/trisharjani/twitter_sentment_python/blob/master/images/relational-plots.jpg" width="500" height="500"/>
 
 ## Summary of Conclusions 
 
+
+
 ### Bibliography #### 
+
+Gross, J. H., & Johnson, K. T. (2016). Twitter Taunts and Tirades: Negative Campaigning in the Age of Trump. PS: Political Science & Politics, 49(04), 748–754. https://doi.org/10.1017/S1049096516001700
 
 Hutto, C. ., & Gilbert, E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media. Retrieved from http://comp.social.gatech.edu/papers/icwsm14.vader. hutto.pdf.
 
