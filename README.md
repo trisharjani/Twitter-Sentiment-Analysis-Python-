@@ -6,7 +6,7 @@ During my MSc, my thesis was focused on the broad goal of understanding why and 
     * A tweet being classified as 'news'  
     * The political affiliation of the tweet (i.e. whether users are more likely to re-tweet 
     
-While this page contains a summarised version of my project, feel free to access the full thesis document [here](http://bit.ly/trisha_thesis) or alternatively watch this [video of a workshop I delivered remotely for the British Library] (http://bit.ly/britishlib_video) for students looking to conduct research projects using social media data 
+While this page contains a summarised version of my project, feel free to access the full thesis document [here](http://bit.ly/trisha_thesis) or alternatively watch this [video of a workshop I delivered remotely for the British Library](http://bit.ly/britishlib_video) for students looking to conduct research projects using social media data 
 
 ## Project Tools 
 To do this, I used a publicly available dataset containing Twitter data which you may download [here](https://catalog.docnow.io/) titled "Ireland 8th amendment referendum vote". Alternatively, the .txt file is also included in repository. I chose to use Python given its ease to work with and R/ R Studio's speed limitations in processing big data.  Feel free to access the full script [here](https://github.com/trisharjani/twitter_sentment_python/blob/master/Cleaning_Sentiment_News.ipynb). Kindly flagging that this code is quite long and may take a few tries to load.
@@ -52,31 +52,46 @@ In order to assign tweets a sentiment, each tweet was run through a sentiment an
 In order to identify whether the user posting the data has an impact on the retweet count and/or probability of a tweet being retweeted, each user needed to be characterised as either i) a campaigner from ‘yes’ camp, ii) campaigner from the ‘no’ camp, iii) a recognised news source, iv) a politician/ political party or, v) neither. To do this, a number of supplementary data sources were sought to generate a list to filter the usernames by. A similar filtering approach was adopted by Gross and Johnson (2016). Once this was done, dummy variables for each type of user were created. These were critical to the regression analysis presented later.
 
 ## Data Visualisations 
-Heatmap of correlations:
+
+#### Heatmap of correlations to test multicollinearity:
 
 <img src="https://github.com/trisharjani/twitter_sentment_python/blob/master/images/heatmap_correlations.jpg" width="400" height="300"/>
 
-Average Sentiment of Tweets over Time: 
+#### Average Sentiment of Tweets over Time: 
 
 ![alt text](https://github.com/trisharjani/python/blob/master/images/sentiment_over_time.jpg "Sentiment over Time")
 
-Network Analysis (smaller cluster represents mostly no-endorsement tweets):
+#### Network Analysis (smaller cluster represents mostly no-endorsement tweets):
+_Lines represent re-tweets, dots represent accounts_ 
 
 [Click here for the zoomed version where node names are visible](https://github.com/trisharjani/twitter_sentment_python/blob/master/images/network%20mapping.jpg)
 
 <img src="https://github.com/trisharjani/python/blob/master/images/network%20mapping.jpg" width="600" height="700"/>
 
-Regression Analaysis (Please refer to the table above as a key for the 1,2,3,4):
+#### Regression Analaysis (Please refer to the table above as a key for the 1,2,3,4):
 
 <img src="https://github.com/trisharjani/twitter_sentment_python/blob/master/images/relational-plots.jpg" width="500" height="500"/>
 
 ## Summary of Conclusions 
 
+The recent growth in the consumption of online information has led to a series of concerns about psychological biases which may, in tandem with social media tools that facilitate it, generate unprecedented levels of polarisation within society. In order to better understand the underlying motivation behind a given behaviour of sharing information which reinforces one’s view, this paper has correlated user-level features and content-level features impacts the reposting of a tweet. A key assumption being that a repost of a tweet can fairly be interpreted as an endorsement of its content.
 
+* The results display some indication of emotional affect playing a part in determining how much a post is shared. In this context, tweets with a more negative sentiment appear to generate a significantly higher retweet count. 
+
+* On a user-level, tweets posted by “official” sources including local Irish political parties, news sources (both local and international) and campaign accounts (both yes and no) display a consistently negative correlation with retweet count. These do not confirm the findings of some literature that demonstrates news tweets are more likely to be retweeted (Naveed et al., 2011). Neither do they confirm the fact that many of Twitter’s most followed accounts are news (Twittercounter, 2018) and the idea that Twitter is used as news medium (Kwak et al., 2010). It is unclear whether this finding is contextual or can be extrapolated to other contexts.
+
+* This paper also demonstrates some homophily among campaign accounts and those directly retweeting campaign accounts; confirming previous literature that measures homophily in political contexts (Halberstam and Knight, 2016). Together, the deviation away from “official” information sources and the tendency to form “clusters” when sharing information demonstrates warranted concerns within literature claiming polarisation. 
 
 ### Bibliography #### 
 
 Gross, J. H., & Johnson, K. T. (2016). Twitter Taunts and Tirades: Negative Campaigning in the Age of Trump. PS: Political Science & Politics, 49(04), 748–754. https://doi.org/10.1017/S1049096516001700
 
+Halberstam, Y., & Knight, B. (2014). Homophily, Group Size, and the Diffusion of Political Information in Social Networks: Evidence from Twitter (No. w20681). Cambridge, MA: National Bureau of Economic Research. https://doi.org/10.3386/w20681
+
 Hutto, C. ., & Gilbert, E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media. Retrieved from http://comp.social.gatech.edu/papers/icwsm14.vader. hutto.pdf.
 
+Kwak, H., Lee, C., Park, H., & Moon, S. (2010). What is Twitter, a social network or a news media? In Proceedings of the 19th international conference on World wide web - WWW ’10 (p. 591). Raleigh, North Carolina, USA: ACM Press. https://doi.org/10.1145/1772690.1772751
+
+Naveed, N., Gottron, T., Kunegis, J., & Alhadi, A. C. (2011). Bad news travel fast: a content-based analysis of interestingness on Twitter. In Proceedings of the 3rd International Web Science Conference on - WebSci ’11 (pp. 1–7). Koblenz, Germany: ACM Press. https://doi.org/10.1145/2527031.2527052
+
+Twitter Counter. (n.d.). Twitter Counter. Retrieved from https://twittercounter.com/
